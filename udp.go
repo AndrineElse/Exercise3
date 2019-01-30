@@ -22,7 +22,7 @@ func reciever(port int){
   }
 }
 
-func sender(){
+func transmitter(){
   serverAddr, err := net.ResolveUDPAddr("udp", "10.100.23.242:20015")
   if err != nil {
       fmt.Printf("Some error %v", err)
@@ -48,9 +48,9 @@ func sender(){
 
 func main() {
 
-  go reciever(30000)
+  //go reciever(30000)
   go reciever(20015)
-  go sender()
+  go transmitter()
 
   select {}
 
